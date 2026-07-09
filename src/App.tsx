@@ -49,7 +49,6 @@ export default function App() {
         audioRef.current.currentTime = 2.5
       }
       
-      // Forces lower volume level (20% power)
       audioRef.current.volume = 0.2;
 
       audioRef.current.play().catch(err => console.log("Audio play blocked: ", err))
@@ -72,38 +71,18 @@ export default function App() {
         </filter>
       </svg>
 
-      {/* STRATEGICALLY SCATTERED DECORATIVE PEONIES (z-0 background layer) */}
+      {/* STRATEGICALLY SCATTERED DECORATIVE PEONIES */}
       
-      {/* Top Left Corner */}
-      <img src="/p1.png" alt="peony" className="absolute top-0 left-0 -translate-x-6 -translate-y-6 w-28 md:w-36 opacity-70 pointer-events-none rotate-[110deg] animate-pulse z-0" loading="lazy" />
-      
-      {/* Top Right Corner */}
-      <img src="/p2.png" alt="peony" className="absolute top-0 right-0 translate-x-6 -translate-y-6 w-24 md:w-32 opacity-65 pointer-events-none -rotate-45 z-0" loading="lazy" />
-
-      {/* Midway Left - Near Photo Gallery Start */}
-      <img src="/p4.png" alt="peony" className="absolute top-[38%] left-[-20px] w-24 md:w-32 opacity-60 pointer-events-none rotate-45 z-0" loading="lazy" />
-
-      {/* Midway Right - Near Photo Gallery Center */}
-      <img src="/p3.png" alt="peony" className="absolute top-[52%] right-[-30px] w-32 md:w-40 opacity-70 pointer-events-none -rotate-12 z-0" loading="lazy" />
-
-      {/* Lower Left - Framed around the Cassette Wrapper */}
-      <img src="/p1.png" alt="peony" className="absolute bottom-[28%] left-[-15px] w-28 md:w-36 opacity-75 pointer-events-none rotate-180 z-0" loading="lazy" />
-
-      {/* Lower Right - Directly flanking the Play/Pause system */}
-      <img src="/p3.png" alt="peony" className="absolute bottom-[18%] right-[-10px] w-26 md:w-34 opacity-70 pointer-events-none rotate-90 z-0" loading="lazy" />
-      
-      {/* NEW: Deep Bottom Center-Left (Filling the space under the play button) */}
-      <img src="/p2.png" alt="peony" className="absolute bottom-[6%] left-[15%] w-24 md:w-32 opacity-65 pointer-events-none rotate-[20deg] z-0" loading="lazy" />
-
-      {/* NEW: Deep Bottom Center-Right (Filling the space under the play button) */}
-      <img src="/p1.png" alt="peony" className="absolute bottom-[3%] right-[20%] w-28 md:w-36 opacity-70 pointer-events-none -rotate-[15deg] z-0" loading="lazy" />
-
-      {/* Absolute Bottom Right Corner */}
-      <img src="/p4.png" alt="peony" className="absolute bottom-0 right-0 translate-x-6 translate-y-6 w-28 md:w-36 opacity-65 pointer-events-none rotate-[340deg] z-0" loading="lazy" />
-
-      {/* NEW: Absolute Bottom Left Corner */}
-      <img src="/p3.png" alt="peony" className="absolute bottom-0 left-0 -translate-x-6 translate-y-6 w-24 md:w-32 opacity-65 pointer-events-none rotate-[60deg] z-0" loading="lazy" />
-
+      <img src="./p1.png" alt="peony" className="absolute top-0 left-0 -translate-x-6 -translate-y-6 w-28 md:w-36 opacity-70 pointer-events-none rotate-[110deg] animate-pulse z-0" loading="lazy" />
+      <img src="./p2.png" alt="peony" className="absolute top-0 right-0 translate-x-6 -translate-y-6 w-24 md:w-32 opacity-65 pointer-events-none -rotate-45 z-0" loading="lazy" />
+      <img src="./p4.png" alt="peony" className="absolute top-[38%] left-[-20px] w-24 md:w-32 opacity-60 pointer-events-none rotate-45 z-0" loading="lazy" />
+      <img src="./p3.png" alt="peony" className="absolute top-[52%] right-[-30px] w-32 md:w-40 opacity-70 pointer-events-none -rotate-12 z-0" loading="lazy" />
+      <img src="./p1.png" alt="peony" className="absolute bottom-[28%] left-[-15px] w-28 md:w-36 opacity-75 pointer-events-none rotate-180 z-0" loading="lazy" />
+      <img src="./p3.png" alt="peony" className="absolute bottom-[18%] right-[-10px] w-26 md:w-34 opacity-70 pointer-events-none rotate-90 z-0" loading="lazy" />
+      <img src="./p2.png" alt="peony" className="absolute bottom-[6%] left-[15%] w-24 md:w-32 opacity-65 pointer-events-none rotate-[20deg] z-0" loading="lazy" />
+      <img src="./p1.png" alt="peony" className="absolute bottom-[3%] right-[20%] w-28 md:w-36 opacity-70 pointer-events-none -rotate-[15deg] z-0" loading="lazy" />
+      <img src="./p4.png" alt="peony" className="absolute bottom-0 right-0 translate-x-6 translate-y-6 w-28 md:w-36 opacity-65 pointer-events-none rotate-[340deg] z-0" loading="lazy" />
+      <img src="./p3.png" alt="peony" className="absolute bottom-0 left-0 -translate-x-6 translate-y-6 w-24 md:w-32 opacity-65 pointer-events-none rotate-[60deg] z-0" loading="lazy" />
 
       {/* MASSIVE WHITE SPACE AT THE VERY TOP */}
       <div style={{ height: '20vh' }}></div>
@@ -147,24 +126,21 @@ export default function App() {
       {/* STAGGERED PHOTO CARDS */}
       <section className="w-full max-w-5xl flex flex-col gap-[70px] z-10">
         
-        {/* Card 1: Forced Left, Tilted Right */}
         <div className="stack" style={{ margin: '0 auto 0 10%', transform: 'rotate(5deg)' }}>
           <div className="card-stacked">
-            <img src="/card1.jpeg" alt="Card 1" className="w-full aspect-square object-cover border-2 border-[#4a3e3d]" />
+            <img src="./card1.jpeg" alt="Card 1" className="w-full aspect-square object-cover border-2 border-[#4a3e3d]" />
           </div>
         </div>
 
-        {/* Card 2: Forced Center, Slight Left Tilt */}
         <div className="stack" style={{ margin: '0 auto', transform: 'rotate(-2deg)' }}>
           <div className="card-stacked">
-            <img src="/card2.jpeg" alt="Card 2" className="w-full aspect-square object-cover border-2 border-[#4a3e3d]" />
+            <img src="./card2.jpeg" alt="Card 2" className="w-full aspect-square object-cover border-2 border-[#4a3e3d]" />
           </div>
         </div>
 
-        {/* Card 3: Forced Right, Tilted Left */}
         <div className="stack" style={{ margin: '0 10% 0 auto', transform: 'rotate(-5deg)' }}>
           <div className="card-stacked">
-            <img src="/card3.jpeg" alt="Card 3" className="w-full aspect-square object-cover border-2 border-[#4a3e3d]" />
+            <img src="./card3.jpeg" alt="Card 3" className="w-full aspect-square object-cover border-2 border-[#4a3e3d]" />
           </div>
         </div>
 
@@ -178,14 +154,11 @@ export default function App() {
         
         <div className="cassette-wrapper">
           <div className="cassette-card">
-            
-            {/* Absolute Corner Screws */}
             <div className="screw1">+</div>
             <div className="screw2">+</div>
             <div className="screw3">+</div>
             <div className="screw4">+</div>
 
-            {/* Spacer to push card1 down accurately */}
             <div className="ups" style={{ height: '35px' }}></div>
 
             <div className="card1">
@@ -214,7 +187,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Spacer to maintain cassette structural integrity */}
             <div className="downs" style={{ height: '35px' }}></div>
             
           </div>
@@ -223,7 +195,7 @@ export default function App() {
         {/* AUDIO FILE */}
         <audio 
           ref={audioRef} 
-          src="/song.mp3" 
+          src="./song.mp3" 
           loop
         />
 
