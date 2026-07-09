@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Visual Theme & Background */
+body {
+  background-color: #fdf3f2;
+  background-image: radial-gradient(#fff5f5 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: #4a3e3d;
+  overflow-x: hidden;
+}
+
+/* Stacked Photo Cards Styles */
+.stack {
+  width: 100%;
+  max-width: 280px;
+  transition: 0.25s ease;
+  position: relative;
+}
+.stack:hover {
+  transform: scale(1.05) !important;
+  z-index: 20;
+}
+.stack:hover .card-stacked::before {
+  transform: translateY(-4%) rotate(-4deg);
+}
+.stack:hover .card-stacked::after {
+  transform: translateY(4%) rotate(4deg);
+}
+.card-stacked {
+  aspect-ratio: 3 / 2;
+  border: 3px solid #4a3e3d;
+  background-color: #fff;
+  position: relative;
+  transition: 0.15s ease;
+  cursor: pointer;
+  padding: 5% 5% 18% 5%;
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.05);
+}
+.card-stacked::before,
+.card-stacked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 3px solid #4a3e3d;
+  background-color: #fff;
+  transform-origin: center center;
+  z-index: -1;
+  transition: 0.15s ease;
+  top: 0;
+  left: 0;
+}
+.card-stacked::before {
+  transform: translateY(-2%) rotate(-6deg);
+}
+.card-stacked::after {
+  transform: translateY(2%) rotate(6deg);
+}
+.image-placeholder {
+  width: 100%;
+  border: 2px solid #4a3e3d;
+  background-color: #f7e6e4;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Cassette Animation Styles */
+.cassette-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  width: fit-content;
+}
+.cassette-card {
+  width: 300px;
+  height: 200px;
+  background: #252525;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  position: relative;
+}
+
+/* Absolute Corner Screws */
+.screw1, .screw2, .screw3, .screw4, .screw5 {
+  display: flex; color: black; border: 1px solid black; background-color: lightgrey;
+  height: 0.75em; width: 0.75em; border-radius: 50%; align-items: center; justify-content: center; font-size: 11px;
+  position: absolute;
+}
+.screw1 { top: 12px; left: 12px; }
+.screw2 { top: 12px; right: 12px; }
+.screw3 { bottom: 12px; left: 12px; }
+.screw4 { bottom: 12px; right: 12px; }
+.screw5 { left: 4.25em; top: -0.5em; }
+
+.card1 {
+  width: 230px; height: 115px; margin-top: 0.5em; margin-left: 2.18em; background-color: #FFFDD0;
+  clip-path: polygon(5% 0, 95% 0, 100% 10%, 100% 100%, 0 100%, 0 10%); border-radius: 5px;
+}
+.line1 { position: relative; width: 200px; height: 1px; background-color: black; top: 1em; left: 0.8em; }
+.line2 { position: relative; width: 200px; height: 1px; background-color: black; top: 2em; left: 0.8em; }
+.yl { display: flex; width: 228px; height: 50px; background-color: rgb(242, 188, 0); margin-top: 2.5em; margin-left: 0.06em; }
+.roll { width: 8em; height: 2em; margin-left: 3em; border-radius: 15px; background-color: #171717; display: flex; }
+.tape { width: 3em; height: 1.5em; position: relative; left: 0.9em; background-color: #252525; }
+.s_wheel, .e_wheel {
+  display: flex; align-items: center; justify-content: center; position: relative; top: 0.215em;
+  width: 1.55em; height: 1.55em; border: 2px dashed #fff; box-shadow: 0 0 0 4.4px #fff; border-radius: 50%;
+}
+.s_wheel { left: 0.15em; }
+.e_wheel { left: 1.7em; }
+.num { margin-left: 1.5em; align-self: center; font-family: monospace; font-size: 14px; color: #000; }
+.or {
+  display: flex; width: 230px; height: 18px; background-color: rgb(241, 90, 37); margin-top: 0.4em;
+  border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; align-items: center; justify-content: center;
+}
+.time { font-size: 0.65em; color: white; font-family: sans-serif; }
+.card2_main { filter: drop-shadow(4px 4px 14px rgba(0, 0, 0, 0.4)); }
+.card2 { width: 150px; height: 50px; margin-left: 4.6em; background-color: #252525; clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%); }
+.c1 { position: relative; width: 0.5em; height: 0.5em; background-color: rgb(190, 190, 190); border-radius: 50%; left: 1.5em; top: 2em; }
+.t1 { position: relative; width: 0.5em; height: 0.5em; background-color: rgb(190, 190, 190); border-radius: 2px; left: 3em; top: 1em; }
+.t2 { position: relative; width: 0.5em; height: 0.5em; background-color: rgb(190, 190, 190); border-radius: 2px; left: 5.7em; top: -0.2em; }
+.c2 { position: relative; width: 0.5em; height: 0.5em; background-color: rgb(190, 190, 190); border-radius: 50%; left: 7.2em; top: -0.2em; }
+
+.playing-anime .s_wheel, .playing-anime .e_wheel { 
+  animation: run 2s infinite linear; 
+}
+@keyframes run { 100% { transform: rotate(360deg); } }
+
+/* Hand-Drawn Sketch Button Styles */
+.button-handdrawn {
+  position: relative; text-align: center; transition: 0.3s ease-in-out; cursor: pointer; background-color: #fff;
+  filter: url(#handDrawnNoise); display: inline-flex; align-items: center; user-select: none;
+  font-family: "Courier New", monospace; font-size: 1.3rem; font-weight: bold; padding: 0.8rem 2rem;
+  border: 3px solid #4a3e3d; border-radius: 2rem; box-shadow: #4a3e3d 4px 4px 0 0px;
+}
+@keyframes idle { 0%, 100% { filter: url(#handDrawnNoise); } 50% { transform: rotate(1.5deg); filter: url(#handDrawnNoise2); } }
+.button-handdrawn { animation: idle 1.2s infinite ease-in-out; }
+.highlight {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; fill: rgba(244, 63, 94, 0.15);
+  stroke: rgba(244, 63, 94, 0.25); stroke-width: 10; stroke-linecap: round; pointer-events: none;
+  stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 0.5s ease-in-out;
+}
+.button-handdrawn:hover { transform: scale(1.03) rotate(-1.5deg); box-shadow: #4a3e3d 5px 5px 0 0px; }
+.button-handdrawn:hover .highlight { stroke-dashoffset: 0; }
+.button-cosm { fill: #4a3e3d; opacity: 0.3; transition: 0.3s ease-out; scale: 0.45; position: absolute; left: 10px; }
+.button-handdrawn:active { box-shadow: #4a3e3d 1px 1px 0 0px; transform: translate(3px, 3px); }
+
+/* Play / Pause Checkbox Deck */
+/* Play / Pause Circular Sketch Deck */
+.music-deck-container {
+  position: relative; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  cursor: pointer; 
+  user-select: none; 
+  margin: 2rem auto;
+  
+  /* Matches the exact hand-drawn sketch style of the Click Me button */
+  background-color: #fff;
+  filter: url(#handDrawnNoise); 
+  border: 3px solid #4a3e3d; 
+  box-shadow: #4a3e3d 4px 4px 0 0px;
+  
+  /* Forces a perfect circle */
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px; 
+  
+  transition: 0.3s ease-in-out;
+}
+
+/* Inherited hand-drawn idle wobble animation */
+.music-deck-container { 
+  animation: idle 1.2s infinite ease-in-out; 
+}
+
+.music-deck-container:hover { 
+  transform: scale(1.05) rotate(-2.5deg); 
+  box-shadow: #4a3e3d 5px 5px 0 0px; 
+}
+
+.music-deck-container:active { 
+  box-shadow: #4a3e3d 1px 1px 0 0px; 
+  transform: translate(3px, 3px); 
+}
+
+/* Icon internal alignments */
+.music-deck-container .play,
+.music-deck-container .pause { 
+  position: absolute; 
+  width: 22px;
+  height: 22px;
+  fill: #4a3e3d; /* Styled to match the typography color perfectly */
+  transition: transform 0.2s ease;
+}
+
+/* Offset the play arrow slightly so it sits visually balanced inside the circle */
+.music-deck-container .play {
+  transform: translateX(2px);
+}
+
+.music-deck-container input:checked ~ .play { 
+  display: none; 
+}
+
+.music-deck-container input:checked ~ .pause { 
+  display: block; 
+}
+
+.music-deck-container input { 
+  position: absolute; 
+  opacity: 0; 
+  cursor: pointer; 
+  height: 0; 
+  width: 0; 
+}
+.music-deck-container .play { position: absolute; animation: keyframes-fill .5s; }
+.music-deck-container .pause { position: absolute; display: none; animation: keyframes-fill .5s; }
+.music-deck-container input:checked ~ .play { display: none; }
+.music-deck-container input:checked ~ .pause { display: block; fill: #e11d48; }
+.music-deck-container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+@keyframes keyframes-fill { 0% { transform: rotate(-180deg) scale(0); opacity: 0; } 50% { transform: rotate(-10deg) scale(1.1); } }
