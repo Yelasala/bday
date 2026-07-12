@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react"
 import { Balloons } from "./components/ui/balloons"
+import confetti from "canvas-confetti"
 
 function useTextScramble(targetText: string) {
   const [text, setText] = useState("")
@@ -32,7 +33,7 @@ function useTextScramble(targetText: string) {
 }
 
 export default function App() {
-  const balloonsRef = useRef<{ launchAnimation: () => void } | null>(null)
+  const balloonsRef = useRef<any>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   
@@ -53,6 +54,38 @@ export default function App() {
 
       audioRef.current.play().catch(err => console.log("Audio play blocked: ", err))
       setIsPlaying(true)
+
+      // FIREWORKS CONFETTI LOGIC
+      const duration = 5 * 1000
+      const animationEnd = Date.now() + duration
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 }
+
+      const randomInRange = (min: number, max: number) =>
+        Math.random() * (max - min) + min
+
+      const interval = window.setInterval(() => {
+        const timeLeft = animationEnd - Date.now()
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval)
+        }
+
+        const particleCount = 50 * (timeLeft / duration)
+        const pinkColors = ['#ffb6c1', '#ff69b4', '#ff1493', '#ffffff']
+
+        confetti({
+          ...defaults,
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+          colors: pinkColors
+        })
+        confetti({
+          ...defaults,
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+          colors: pinkColors
+        })
+      }, 250)
     }
   }
 
